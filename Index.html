@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <!-- HTML CODE -->
+    <div class="box1-container" id="cv-form">
+      <!-- Information  -->
+      <h2 class="text-center my-3">RESUME GENERATOR</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <!-- First section -->
+          <h3>Personal Information</h3>
+
+          <div class="from-group mt-2">
+
+            <label for="photoField">Photo :</label>
+            <input type="file" id="photoField" class="form-control" />
+            <label for="nameField">Your Name :</label>
+            <input type="text" id="nameField" placeholder="Enter here" class="form-control" /><br />
+
+          </div>
+          <br />
+
+          <div class="from-group mt-2">
+            <h3>Contact Details</h3>
+            <br />
+
+            <label for="phoneField">Mobile No. :</label>
+            <input
+              type="number"
+              name=""
+              id="phoneField"
+              placeholder="Enter here"
+              class="form-control"
+            /><br />
+            <label for="emailField">Email Id :</label>
+            <input
+              type="email"
+              name=""
+              id="emailField"
+              placeholder="Enter here"
+              class="form-control"
+            /><br />
+            <label for="addressField">Address :</label>
+            <textarea
+              id="addressField"
+              rows="3"
+              placeholder="Enter here"
+              class="form-control"
+            ></textarea>
+          </div>
+
+          <div class="from-group mt-2" id="skill">
+            <h3>Interpersonal Skills</h3>
+
+            <label for="skillsField">Skills :</label>
+            <textarea
+              id="skillsField"
+              class="form-control skField"
+              rows="2"
+              placeholder="Enter Skills"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="skAddButton">
+              <button onclick="addNewSkills()" class="btn btn-primary btn-sm">
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="from-group mt-2" id="hobbies">
+            <h3>Hobbies</h3>
+
+            <label for="hobbiesField">Hobbies :</label>
+            <textarea
+              id="hobbiesField"
+              class="form-control hoField"
+              rows="2"
+              placeholder="Enter Hobbies"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="hobAddButton">
+              <button onclick="addNewHobbies()" class="btn btn-primary btn-sm">
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="from-group mt-2" id="lan">
+            <h3>Language Known</h3>
+            <label for="languageField">Language :</label>
+            <textarea
+              id="languageField"
+              placeholder="Enter Language"
+              rows="2"
+              class="form-control lanField"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="lanAddButton">
+              <button onclick="addNewLanguage()" class="btn btn-primary btn-sm">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <!-- Second section -->
+          <div class="from-group mt-2">
+            <label for="objectiveField">Objective :</label>
+            <select id="objectiveField" class="form-control obField">
+              <option value="" selected>select</option>
+              <option
+                value="To Work in an environmental which encourages me to succeed and 
+                        grow professionally where I can utilize my skills and knowlwdge appropriately."
+              >
+                To Work in an environmental which encourages me to succeed and
+                grow professionally where I can utilize my skills and knowlwdge
+                appropriately.
+              </option>
+              <option
+                value="Working for an organization that gives me ample opportunities to 
+                        improve my skills and knowledge and contribute to the growth of the organization."
+              >
+                Working for an organization that gives me ample opportunities to
+                improve my skills and knowledge and contribute to the growth of
+                the organization.
+              </option>
+              <option
+                value="Seeking a position in a dynamic organization where I can launch my 
+                        career and work towards building a strong skill set."
+              >
+                Seeking a position in a dynamic organization where I can launch
+                my career and work towards building a strong skill set.
+              </option>
+              <option
+                value="A dedicated and detail-oriented individual looking for an entry-level
+                        position at a well-reputed organization to gain experience and exposure and expand my knowledge."
+              >
+                A dedicated and detail-oriented individual looking for an
+                entry-level position at a well-reputed organization to gain
+                experience and exposure and expand my knowledge.
+              </option>
+            </select>
+          </div>
+
+          <div class="from-group mt-2" id="ed">
+            <h3>Educational Details</h3>
+            <label for="educationField">Academic Details :</label>
+            <textarea
+              id="educationField"
+              placeholder="Enter Your Acadamic Details"
+              rows="3"
+              class="form-control edField"
+            ></textarea>
+
+            <div class="container text-center mt-3" id="edAddButton">
+              <button
+                onclick="addNewEducation()"
+                class="btn btn-primary btn-sm"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="from-group mt-2" id="ex">
+            <h3>Experience</h3>
+
+            <label for="workField">Work Experience :</label><br />
+            <textarea
+              rows="3"
+              placeholder="Enter here"
+              id="workField"
+              class="form-control weField"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="exAddButton">
+              <button
+                onclick="addNewExperience()"
+                class="btn btn-primary btn-sm"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="from-group mt-2" id="pr">
+            <h3>Project</h3>
+            <br />
+
+            <label for="projectField">Project :</label><br />
+            <textarea
+              placeholder="Enter here"
+              id="projectField"
+              class="form-control prField"
+              rows="3"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="prAddButton">
+              <button onclick="addNewProject()" class="btn btn-primary btn-sm">
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="from-group mt-2">
+            <h3>Important Links</h3>
+            <br />
+
+            <label for="linkedinField">linkedin :</label>
+            <input type="url" id="linkedinField" class="form-control" />
+            <label for="facebookField">Facebook :</label>
+            <input type="url" id="facebookField" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center mt-3">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg">
+          Generate CV
+        </button>
+      </div>
+    </div>
+
+    <!-- CV TEMPLATE -->
+    <div class="box2-container" id="cv-template">
+      <!-- template -->
+
+      <div class="row">
+        <div class="col-md-4 background text-center py-5">
+          <!-- First Column -->
+
+          <img
+            src="https://img.freepik.com/free-icon/user_318-804790.jpg"
+            alt=""
+            class="img-fluid myImg"
+            id="photoT"
+          />
+
+          <div class="name text-center py-5">
+            <p id="nameT">Sairaj Pradip Todankar</p>
+            <p id="phoneT">+919763743809,+918806038299</p>
+            <p id="emailT">
+              <a href="#">todankarsairaj@gmail.com</a>
+            </p>
+            <p id="addressT">
+              At.Post.Gaonkhadi,Bhandarwadi, Tal.Dist.Ratnagiri,Maharashtra
+            </p>
+
+            <hr />
+
+            <p>
+              <a id="linT" href="#">https://www.linkedin.com</a>
+            </p>
+            <p>
+              <a id="fbT" href="#">https://www.facebook.com</a>
+            </p>
+          </div>
+
+          <!-- interpersonal skill -->
+          <div class="card mt-1">
+            <div class="card-header text-center background1">
+              <h3>INTERPERSONAL SKILLS</h3>
+            </div>
+
+            <div class="card-body background2">
+              <ul id="skillT">
+                <li>Quick Learner</li>
+
+                <li>Hard Worker</li>
+
+                <li>Team Player</li>
+
+                <li>Good Character</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Hobbies -->
+          <div class="card mt-1">
+            <div class="card-header text-center background1">
+              <h3>HOBBIES</h3>
+            </div>
+
+            <div class="card-body background2">
+              <ul id="hobbiesT">
+                <li>Reading Books</li>
+
+                <li>Watching Tv</li>
+
+                <li>Cooking</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- language -->
+          <div class="card mt-1">
+            <div class="card-header text-center background1">
+              <h3>LANGUAGE KONWN</h3>
+            </div>
+
+            <div class="card-body background2">
+              <ul id="languageT">
+                <li>English</li>
+
+                <li>Marathi</li>
+
+                <li>Hindi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 py-5">
+          <!-- Second Column -->
+
+          <h1 id="nameT1" class="text-center" style="font-weight: 980">
+            SAIRAJ PRADIP TODANKAR
+          </h1>
+
+          <!-- Objective -->
+          <div class="card mt-5">
+            <div class="card-header text-center background">
+              <h3>OBJECTIVE</h3>
+            </div>
+
+            <div class="card-body">
+              <p id="objectiveT">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Laboriosam, soluta.Cum, nulla! Quaerat nesciunt aspernatur quae,
+                vitae quisquam, eligendi provident veniam magnam sint
+                perferendis odio beatae eaque voluptatem, quasi dolores.
+              </p>
+            </div>
+          </div>
+
+          <!-- education -->
+          <div class="card mt-5">
+            <div class="card-header text-center background">
+              <h3>ACADEMIC DETAILS</h3>
+            </div>
+
+            <div class="card-body">
+              <ul id="educationT">
+                <li>
+                  Completed BACHELOR OF ENGINEERING from SINDHUDURG SHIKSHAN
+                  PRASARK MANDAL COLLEGE OF ENGINEERING KANKAVLI in year
+                  2018-2021 with 70.44%
+                </li>
+                <li>
+                  Completed DIPLOMA ENGINEERING from GOVERNMENT POLYTECHNIC
+                  RATNAGIRI in year 2014-2018 with 72.12%
+                </li>
+                <li>
+                  Completed SSC from SARASWATI VIDYA MANDIR GAONKHADI in year
+                  2014 with 76.80%
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- work experience -->
+          <div class="card mt-5">
+            <div class="card-header text-center background">
+              <h3>WORK EXPERIENCE</h3>
+            </div>
+
+            <div class="card-body">
+              <ul id="workT">
+                <li>
+                  Completed 6 Month Apperantice Training as JUNIOR QUALITY
+                  ENGINEER at DHOOT TRANSMISSION PRV.LTD in year DEC 2021-JUN
+                  2022
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- project -->
+          <div class="card mt-5">
+            <div class="card-header text-center background">
+              <h3>ACADEMIC PROJECT</h3>
+            </div>
+
+            <div class="card-body">
+              <ul id="projectT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae, tempora?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae, tempora?
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container mt-5 text-center">
+            <button onclick="PrintCV()" class="btn background">Print CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="Index.js"></script>
+  </body>
+</html>
